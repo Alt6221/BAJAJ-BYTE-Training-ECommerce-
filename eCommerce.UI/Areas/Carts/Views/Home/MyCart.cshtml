@@ -1,0 +1,229 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using eCommerce.Models
+@model IEnumerable<MyCartVM>
+@{
+    ViewData["Title"] = "My Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<@* !DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bajaj eCommerce</title>
+    <meta name="keywords" content="HTML5 Template">
+    <meta name="description" content="Molla - Bootstrap eCommerce Template">
+    <meta name="author" content="p-themes">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="assets/images/icons/site.html">
+    <link rel="mask-icon" href="assets/images/icons/safari-pinned-tab.svg" color="#666666">
+    <link rel="shortcut icon" href="assets/images/icons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Molla">
+    <meta name="application-name" content="Molla">
+    <meta name="msapplication-TileColor" content="#cc9966">
+    <meta name="msapplication-config" content="assets/images/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="assets/css/style.css">
+	<style>
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-bottom: 20px; /* Adjust the margin as needed */
+		}
+
+		th, td {
+			padding: 10px; /* Adjust the padding as needed */
+			text-align: center;
+			border: 1px solid #ddd; /* Add borders for better visibility, adjust as needed */ 
+		}
+
+		th {
+			background-color: #f2f2f2; /* Optional: Add a background color to header cells */
+		}
+
+		img {
+			display: block;
+			margin: auto;
+		}
+
+	</style>
+</head> *@
+<@* body> *@ 
+	<div class="page-header text-center" style="background-image: url('assets/images/page-header-bg.jpg')">
+		<div class="container">
+			<h1 class="page-title">Shopping Cart<span>Shop</span></h1>
+		</div><!-- End .container -->
+	</div><!-- End .page-header -->
+	<nav aria-label="breadcrumb" class="breadcrumb-nav">
+		<div class="container">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+				<li class="breadcrumb-item"><a href="#">Shop</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
+			</ol>
+		</div><!-- End .container -->
+	</nav><!-- End .breadcrumb-nav -->
+
+	<div class="page-content">
+		<div class="cart">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-9">
+						<table class="table table-cart table-mobile">
+							<thead>
+								<tr>
+									<th>Product</th>
+									<th>Product Name</th>
+									<th>Cost Price</th>
+									<th>Discounted Price</th>
+									<th>Quantity</th>
+									<th>Size</th>
+									@* <th>Total</th> *@
+									<th>Delete</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								@foreach(var myCart in Model)
+								{
+									<tr>
+										<td class="product-col">
+											
+												<figure class="product-media">
+													<a href="#">
+														<img src="@Url.Content(myCart.Picture)" alt="Product image">
+													</a>
+												</figure>
+											
+										</td>
+										<td>
+											<h3 class="product-title">
+												<a href="#">@myCart.ProductName</a>
+											</h3><!-- End .product-title -->
+										</td>
+										<td class="price-col">Rs.@myCart.UnitPrice</td>
+										<td class="price-col">Rs.@myCart.DiscountedAmount</td>
+										<td class="quantity-col">
+											<div class="cart-product-quantity">
+												<input type="number" class="form-control" value="1" min="1" max="10" step="1" data-decimals="0" required>
+											</div><!-- End .cart-product-quantity -->
+										</td>
+										<td>
+											<select id="dropdown" name="category">
+										<option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										</select>
+										</td>
+										@* <td class="total-col">@myCart.DiscountedAmount</td> *@
+										<td class="remove-col"><a class="btn-remove" asp-area="Carts" asp-controller="Home" asp-action="RemoveFromCart" asp-route-id="@myCart.CartDetailId">Delete</a></td>
+									</tr>
+								}	
+							</tbody>
+						</table><!-- End .table table-wishlist -->
+
+						<div class="cart-bottom">
+							<div class="cart-discount">
+								<form action="#">
+									<div class="input-group">
+										<input type="text" class="form-control" required placeholder="coupon code">
+										<div class="input-group-append">
+											<button class="btn btn-outline-primary-2" type="submit"><i class="icon-long-arrow-right"></i></button>
+										</div><!-- .End .input-group-append -->
+									</div><!-- End .input-group -->
+								</form>
+							</div><!-- End .cart-discount -->
+
+							<a href="#" class="btn btn-outline-dark-2"><span>UPDATE CART</span><i class="icon-refresh"></i></a>
+						</div><!-- End .cart-bottom -->
+					</div><!-- End .col-lg-9 -->
+					<aside class="col-lg-3">
+						<div class="summary summary-cart">
+							 <h3 class="summary-title">Cart Total</h3><!-- End .summary-title -->
+
+							<table class="table table-summary">
+								<tbody>
+									@*<tr class="summary-subtotal">
+										<td>Subtotal:</td>
+										<td>$160.00</td>
+									</tr><!-- End .summary-subtotal -->
+									<tr class="summary-shipping">
+										<td>Shipping:</td>
+										<td>&nbsp;</td>
+									</tr>
+
+									<tr class="summary-shipping-row">
+										<td>
+											<div class="custom-control custom-radio">
+												<input type="radio" id="free-shipping" name="shipping" class="custom-control-input">
+												<label class="custom-control-label" for="free-shipping">Free Shipping</label>
+											</div><!-- End .custom-control -->
+										</td>
+										<td>$0.00</td>
+									</tr><!-- End .summary-shipping-row -->
+
+									<tr class="summary-shipping-row">
+										<td>
+											<div class="custom-control custom-radio">
+												<input type="radio" id="standart-shipping" name="shipping" class="custom-control-input">
+												<label class="custom-control-label" for="standart-shipping">Standart:</label>
+											</div><!-- End .custom-control -->
+										</td>
+										<td>$10.00</td>
+									</tr><!-- End .summary-shipping-row -->
+
+									<tr class="summary-shipping-row">
+										<td>
+											<div class="custom-control custom-radio">
+												<input type="radio" id="express-shipping" name="shipping" class="custom-control-input">
+												<label class="custom-control-label" for="express-shipping">Express:</label>
+											</div><!-- End .custom-control -->
+										</td>
+										<td>$20.00</td>
+									</tr><!-- End .summary-shipping-row -->
+
+									<tr class="summary-shipping-estimate">
+										<td>Estimate for Your Country<br> <a href="dashboard.html">Change address</a></td>
+										<td>&nbsp;</td>
+									</tr><!-- End .summary-shipping-estimate --> *@
+
+									<tr class="summary-total">
+										<td>Total:</td>
+									<td>
+										Rs @Model.Sum(item => item.TotalAmount)
+									</td>
+									</tr><!-- End .summary-total -->
+								</tbody>
+							</table><!-- End .table table-summary --> 
+
+							<form action="Carts/Home/CreateCheckoutSession" method="POST">
+
+                    <button type="submit" class="btn btn-block btn-primary my-3 py-3" id="checkout-button">
+                        Proceed To Checkout
+                    </button>
+            </form>
+						</div><!-- End .summary -->
+
+						<a href="category.html" class="btn btn-outline-dark-2 btn-block mb-3"><span>CONTINUE SHOPPING</span><i class="icon-refresh"></i></a>
+					</aside><!-- End .col-lg-3 -->
+				</div><!-- End .row -->
+			</div><!-- End .container -->
+		</div><!-- End .cart -->
+	</div><!-- End .page-content -->
+  @*  </body>
+</html> *@
