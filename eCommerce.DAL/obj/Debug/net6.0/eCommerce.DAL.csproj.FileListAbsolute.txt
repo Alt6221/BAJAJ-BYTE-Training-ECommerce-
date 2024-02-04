@@ -1,0 +1,17 @@
+D:\BAJAJ\ASP .NET 6.0\eCommerce\eCommerce.DAL\bin\Debug\net6.0\eCommerce.DAL.deps.json
+D:\BAJAJ\ASP .NET 6.0\eCommerce\eCommerce.DAL\bin\Debug\net6.0\eCommerce.DAL.runtimeconfig.json
+D:\BAJAJ\ASP .NET 6.0\eCommerce\eCommerce.DAL\bin\Debug\net6.0\eCommerce.DAL.dll
+D:\BAJAJ\ASP .NET 6.0\eCommerce\eCommerce.DAL\bin\Debug\net6.0\eCommerce.DAL.pdb
+D:\BAJAJ\ASP .NET 6.0\eCommerce\eCommerce.DAL\bin\Debug\net6.0\eCommerce.Models.dll
+D:\BAJAJ\ASP .NET 6.0\eCommerce\eCommerce.DAL\bin\Debug\net6.0\eCommerce.Models.pdb
+D:\BAJAJ\ASP .NET 6.0\eCommerce\eCommerce.DAL\obj\Debug\net6.0\eCommerce.DAL.csproj.AssemblyReference.cache
+D:\BAJAJ\ASP .NET 6.0\eCommerce\eCommerce.DAL\obj\Debug\net6.0\eCommerce.DAL.GeneratedMSBuildEditorConfig.editorconfig
+D:\BAJAJ\ASP .NET 6.0\eCommerce\eCommerce.DAL\obj\Debug\net6.0\eCommerce.DAL.AssemblyInfoInputs.cache
+D:\BAJAJ\ASP .NET 6.0\eCommerce\eCommerce.DAL\obj\Debug\net6.0\eCommerce.DAL.AssemblyInfo.cs
+D:\BAJAJ\ASP .NET 6.0\eCommerce\eCommerce.DAL\obj\Debug\net6.0\eCommerce.DAL.csproj.CoreCompileInputs.cache
+D:\BAJAJ\ASP .NET 6.0\eCommerce\eCommerce.DAL\obj\Debug\net6.0\eCommerce.DAL.csproj.CopyComplete
+D:\BAJAJ\ASP .NET 6.0\eCommerce\eCommerce.DAL\obj\Debug\net6.0\eCommerce.DAL.dll
+D:\BAJAJ\ASP .NET 6.0\eCommerce\eCommerce.DAL\obj\Debug\net6.0\refint\eCommerce.DAL.dll
+D:\BAJAJ\ASP .NET 6.0\eCommerce\eCommerce.DAL\obj\Debug\net6.0\eCommerce.DAL.pdb
+D:\BAJAJ\ASP .NET 6.0\eCommerce\eCommerce.DAL\obj\Debug\net6.0\eCommerce.DAL.genruntimeconfig.cache
+D:\BAJAJ\ASP .NET 6.0\eCommerce\eCommerce.DAL\obj\Debug\net6.0\ref\eCommerce.DAL.dll
